@@ -4,6 +4,18 @@
 
 # Pour l'instant c'est juste un menu...
 
+searchuser () {
+  echo
+  read -p "Utilisateur: " USER
+  echo
+  REP=$(grep $USER /etc/passwd | cut -d: -f6)
+  if test -d "$REP"; then
+    echo L\'utilisateur $USER existe ici: $REP
+  else
+    echo Utilisateur $USER introuvable
+  fi
+}
+
 input=""
 
 while [ "$input" != "q" ]; do
@@ -19,6 +31,7 @@ while [ "$input" != "q" ]; do
     ;;
   2)
     message="Rechercher"
+    searchuser
     ;;
   3)
     message="Supprimer"
