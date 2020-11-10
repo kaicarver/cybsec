@@ -1,40 +1,35 @@
 #!/bin/bash
 
-# script bash pour la gestion de user dans le système linux
-# 1- afficher un menu pour l'utilisateur pour lui donner le choix de quelles sont les actions disponibles
-# 2- avec case vous allez traiter chaque action choisi par l'utilisateur
-# 3- les actions sont les suivantes:
-# 	-créer un nouvel utilisateur
-# 	-rechercher un user
-# 	-supprimer un utilisateur
-# 4- utiliser la boucle pour que le script reste toujours en execution jusqu'à que l'utilisateur tape la mot quitter
+# Script bash pour la gestion de user dans le système linux
 
-INPUT=""
+# Pour l'instant c'est juste un menu...
 
-while [ "$INPUT" != "q" ]; do
+input=""
+
+while [ "$input" != "q" ]; do
   echo "Commandes disponibles :"
   echo "1: créer un nouvel utilisateur"
-	echo "2: rechercher un user"
+	echo "2: rechercher un utilisateur"
 	echo "3: supprimer un utilisateur"
 	echo "q: quitter"
-  read -n1 INPUT
-  case "$INPUT" in
+  read -n1 input
+  case "$input" in
   1)
-    Message="Creer"
+    message="Creer"
     ;;
   2)
-    Message="Rechercher"
+    message="Rechercher"
     ;;
   3)
-    Message="Supprimer"
+    message="Supprimer"
     ;;
   q)
-    Message="Au revoir !"
+    message="Au revoir !"
     ;;
   *)
-    Message="$INPUT: commande inconnue"
+    message="$input: commande inconnue"
     ;;
   esac
   echo
-  echo $Message
+  echo $message
 done
