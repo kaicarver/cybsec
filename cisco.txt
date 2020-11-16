@@ -1,0 +1,30 @@
+en
+entrée
+conf t
+int g0/0
+nameif wan
+ip address dhcp
+no shutdown
+exit
+int g0/1
+nameif lan
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+show int ip brief
+int g0/1
+security-level 100
+exit
+username admin password cisco
+aaa authentication ssh console LOCAL
+ssh 192.168.1.0 255.255.255.0 lan
+ssh key-exchange group dh-group14-sha1
+ssh timeout 60
+end
+copy running-config startup-config
+
+Powershell (ou cmd)
+ssh admin@192.168.1.1
+
+
+
