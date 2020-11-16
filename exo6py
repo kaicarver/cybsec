@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import os
+
+def showdir(dir, depth):
+  for f in os.listdir(dir):
+    if os.path.isdir(f):
+      print('*'*4*depth, f)
+      showdir(f, depth+1)
+    else:
+      print('-'*4*depth, f)
+
+print(os.getcwd())
+
+showdir(".", 1)
