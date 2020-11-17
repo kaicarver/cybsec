@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import socket,struct, binascii
 
-ethertype = 0x0800  # IPv4
-#ethertype = 0x0806  # ARP
+#ethertype = 0x0800  # IPv4
+ethertype = 0x0806  # ARP
 
 rawsocket=socket.socket(socket.PF_PACKET, socket.SOCK_RAW, socket.htons(0x0800))
 
