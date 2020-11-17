@@ -51,6 +51,11 @@ valeurs : Linux 64, Windows 128, Cisco 255
 
 Protocole utilise pour la partie donnees du datagramme.
 
+    0x01	1	ICMP
+    0x06	6	TCP
+    0x11	17	UDP
+    etc.
+
 ## Header Checksum
 
 Checksum de l'en-tete.
